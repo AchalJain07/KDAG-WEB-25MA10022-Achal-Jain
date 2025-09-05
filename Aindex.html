@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Quiz Challenge</title>
+    <link rel="stylesheet" href="Astyle.css">
+</head>
+<body>
+    <div class="container">
+        <div class="brand-header">
+            <h1 class="brand-title">
+                <span class="brand-kdagx">KDAG X </span><span class="brand-achal">Achal</span>
+            </h1>
+        </div>
+    <div id="particles-js"></div>
+        <header class="quiz-header">
+            <div class="navigation">
+                <button class="nav-btn active" id="homeBtn" onclick="showHome()">Home</button>
+                <button class="nav-btn" id="quizBtn" onclick="showQuiz()">Start Quiz</button>
+            </div>
+            <h1 id="pageTitle">Data & Analytics Quiz</h1>
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <p class="question-counter" id="questionCounter">Question 1 of 7</p>
+        </header>
+
+        <main class="quiz-main">
+            <div class="home-card" id="homeCard">
+                <div class="welcome-section">
+                    <h2>Welcome to Data & Analytics Quiz</h2>
+                    <p class="welcome-description">
+                        Test your knowledge in data science, analytics, statistics, and business intelligence. 
+                        This comprehensive quiz covers essential concepts that every data professional should know.
+                    </p>
+                </div>
+                
+                <div class="quiz-info">
+                    <div class="info-item">
+                        <h3>📊 Topics Covered</h3>
+                        <ul>
+                            <li>Statistical Analysis</li>
+                            <li>Data Visualization</li>
+                            <li>Machine Learning</li>
+                            <li>Business Intelligence</li>
+                            <li>Data Processing</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-item">
+                        <h3>🎯 Quiz Details</h3>
+                        <ul>
+                            <li>7 Multiple Choice Questions</li>
+                            <li>Instant Feedback</li>
+                            <li>Detailed Explanations</li>
+                            <li>Progress Tracking</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <button class="start-quiz-btn" onclick="showQuiz()">Start Quiz Challenge</button>
+            </div>
+
+            <div class="quiz-card" id="quizCard">
+                <div class="question-section">
+                    <h2 class="question" id="questionText"></h2>
+                </div>
+                
+                <div class="options-section" id="optionsSection">
+                    <!-- Options will be dynamically inserted here -->
+                </div>
+                
+                <div class="feedback-section" id="feedbackSection" style="display: none;">
+                    <div class="feedback-content" id="feedbackContent"></div>
+                    <button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next Question</button>
+                </div>
+            </div>
+
+            <div class="results-card" id="resultsCard" style="display: none;">
+                <h2>Quiz Complete!</h2>
+                <div class="score-display" id="scoreDisplay"></div>
+                <div class="score-breakdown" id="scoreBreakdown"></div>
+                <button class="restart-btn" onclick="restartQuiz()">Take Quiz Again</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="Ascript.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+particlesJS("particles-js", {
+  "particles": {
+    "number": { "value": 80 },
+    "color": { "value": "#ffffff" },
+    "shape": { "type": "circle" },
+    "opacity": {
+      "value": 0.5,
+      "random": false
+    },
+    "size": {
+      "value": 3,
+      "random": true
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 150,
+      "color": "#ffffff",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 2,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "out"
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": { "enable": true, "mode": "grab" },
+      "onclick": { "enable": true, "mode": "push" }
+    },
+    "modes": {
+      "grab": { "distance": 200, "line_linked": { "opacity": 1 } },
+      "push": { "particles_nb": 4 }
+    }
+  },
+  "retina_detect": true
+});
+</script>
+</body>
+</html>
